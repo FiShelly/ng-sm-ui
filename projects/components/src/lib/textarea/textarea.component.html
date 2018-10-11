@@ -1,0 +1,14 @@
+<label class="el-textarea"
+       [class.is-disabled]="disabled"
+>
+    <textarea class="el-textarea__inner"
+              [disabled]="disabled"
+              [readonly]="readonly"
+              [placeholder]="placeholder"
+              [(ngModel)]="model"
+              [rows]="rows"
+              (ngModelChange)="handleInputChange($event)"
+              (focus)="focus.emit($event)"
+              (blur)="blur.emit($event)"
+    ></textarea>
+</label>

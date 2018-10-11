@@ -1,0 +1,65 @@
+@import "../../../assets/var";
+
+.el-tab-bar {
+    .el-tab-bar__nav {
+        overflow: hidden;
+        //margin-bottom: -1px;
+        position: relative;
+        white-space: nowrap;
+        text-align: left;
+        z-index: 2;
+        margin-bottom: 15px;
+        &::after{
+            position: absolute;
+            height: 2px;
+            background-color: $grey300;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: '';
+        }
+
+        .el-tab-bar__items {
+            padding: 0 20px;
+            height: 40px;
+            box-sizing: border-box;
+            line-height: 40px;
+            display: inline-block;
+            list-style: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: #303133;
+            position: relative;
+            cursor: pointer;
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: $blue400;
+                z-index: 1;
+                transition: opacity .3s ease;
+                list-style: none;
+                opacity: 0;
+            }
+            &.is-selected{
+                &::after{
+                    opacity: 1;
+                }
+            }
+
+            &.is-disabled{
+                color: $ccGrey;
+                cursor: not-allowed;
+            }
+        }
+
+    }
+
+    .el-tab-bar__views {
+        height: auto;
+        position: relative;
+    }
+}

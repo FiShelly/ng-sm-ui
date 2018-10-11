@@ -13,9 +13,18 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "allowSyntheticDefaultImports": true,
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "components": [
+        "dist/components"
+      ],
+      "components/*": [
+        "dist/components/*"
+      ]
+    }
   }
 }

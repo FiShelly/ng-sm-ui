@@ -1,0 +1,7 @@
+<div class="el-dialog" #modal>
+    <ng-sm-modal-header (close)="closeModal()">{{title}}</ng-sm-modal-header>
+    <div class="el-dialog__body"><span>{{text}}</span></div>
+    <ng-sm-modal-footer>
+        <ng-sm-button theme="primary" (btnClick)="closeModal()">确定</ng-sm-button>
+    </ng-sm-modal-footer>
+</div>

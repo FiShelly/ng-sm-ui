@@ -1,0 +1,8 @@
+<div class="el-dialog" #modal>
+    <ng-sm-modal-header (close)="cancelHandle()">{{title}}</ng-sm-modal-header>
+    <div class="el-dialog__body"><span>{{text}}</span></div>
+    <ng-sm-modal-footer>
+        <ng-sm-button (btnClick)="cancelHandle()">取消</ng-sm-button>
+        <ng-sm-button theme="primary" (btnClick)="okHandle()">确定</ng-sm-button>
+    </ng-sm-modal-footer>
+</div>

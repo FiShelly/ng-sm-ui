@@ -1,0 +1,21 @@
+<div class="el-select"
+     #select
+     [class.is-disabled]="disabled"
+     (click)="toggleDrop($event)"
+>
+    <ng-sm-input [readonly]="true"
+               [placeholder]="placeholder"
+               [model]="text"
+               [disabled]="disabled"
+               autocomplete="off"
+               suffix_icon="&#xe635;"
+               [class.is-reverse]="isActived"
+    ></ng-sm-input>
+
+    <ul class="el-select-dropdown"
+        #frame
+        [@state]="isActived"
+    >
+        <ng-content></ng-content>
+    </ul>
+</div>

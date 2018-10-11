@@ -1,0 +1,26 @@
+<div class="el-input"
+     [class.is-disabled]="disabled"
+     [ngClass]="{
+        'el-input--suffix': suffix_icon,
+        'el-input--prefix': prefix_icon}"
+>
+    <input [type]="type"
+           [disabled]="disabled"
+           [readonly]="readonly"
+           [(ngModel)]="model"
+           [placeholder]="placeholder"
+           [autocomplete]="autocomplete"
+           (ngModelChange)="handleInputChange($event)"
+           #input
+           (focus)="focus.emit($event)"
+           (blur)="blur.emit($event)"
+           class="el-input__inner" />
+    <span *ngIf="suffix_icon" class="el-input__suffix">
+        <span class="el-input__suffix-inner">
+            <i class="el-input__icon icon-font">{{suffix_icon}}</i>
+        </span>
+    </span>
+    <span *ngIf="prefix_icon" class="el-input__prefix">
+        <i class="el-input__icon icon-font">{{prefix_icon}}</i>
+    </span>
+</div>

@@ -1,0 +1,21 @@
+<div class="el-pagination">
+    <div class="el-pagination-part left">
+        <ng-container *ngIf="showLimit">
+            <ng-sm-label>每页显示</ng-sm-label>
+            <ng-sm-input [(ngModel)]="limit"></ng-sm-input>
+            <ng-sm-label>条</ng-sm-label>
+            <ng-sm-button (btnClick)="modifyLimit($event)">修改</ng-sm-button>
+        </ng-container>
+    </div>
+
+    <div class="el-pagination-part right">
+        <ng-sm-button (btnClick)="prePage($event)" [disabled]="current <= 1"><span class="icon-font">&#xe634;</span>
+        </ng-sm-button>
+        <ng-sm-label>页码</ng-sm-label>
+        <ng-sm-label>{{current}} / {{total}}</ng-sm-label>
+        <ng-sm-button (btnClick)="nextPage($event)" [disabled]="current >= total"><span class="icon-font">&#xe633;</span>
+        </ng-sm-button>
+        <ng-sm-input [(ngModel)]="jumper" (ngModelChange)="modifyJumper($event)"></ng-sm-input>
+        <ng-sm-button (btnClick)="jumperPage($event)">跳转</ng-sm-button>
+    </div>
+</div>

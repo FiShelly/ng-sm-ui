@@ -1,0 +1,32 @@
+    <button
+        *ngIf="type !== 'file'"
+        type="button"
+        [class]="'el-button' + ' el-button--' + theme"
+        [class.is-disabled]="disabled"
+        [class.is-loading]="loading"
+        [class.is-plain]="plain"
+        [class.is-circle]="circle"
+        [class.is-round]="round"
+        [disabled]="disabled || loading ? 'disabled' : false"
+        (click)="clickEventHandle($event)"
+    >
+        <i *ngIf="loading">&#xe60f;</i>
+        <span><ng-content></ng-content></span>
+    </button>
+    <div *ngIf="type === 'file'"
+         [class]="'el-button' + ' el-button--' + theme"
+         [class.is-disabled]="disabled"
+         [class.is-loading]="loading"
+         [class.is-plain]="plain"
+         [class.is-circle]="circle"
+         [class.is-round]="round"
+    >
+        <span class="icon-font" *ngIf="icon" [innerHTML]="icon"></span>
+        <span>{{text}}</span>
+        <input type="file"
+               [multiple]="multiple"
+               [disabled]="disabled"
+               (change)="changeEventHandle($event)"
+               class="el-button__file">
+    </div>
+
