@@ -1,12 +1,12 @@
 import {
-    ApplicationRef,
+    ApplicationRef, Component,
     ComponentFactoryResolver,
     EmbeddedViewRef,
     EventEmitter,
     Injectable,
     Injector
 } from '@angular/core';
-import {ModalAlertComponent, ModalConfirmComponent, ModalPromptComponent, ModalImageSelectComponent} from '../../modal';
+import {ModalAlertComponent, ModalConfirmComponent, ModalPromptComponent, ModalImageSelectComponent, BaseModal} from '../../modal';
 import {EventBusService} from '../eventBus';
 
 const modalMap = [
@@ -35,7 +35,7 @@ export class ModalService {
         private eventBus: EventBusService,
         private injector: Injector
     ) {
-        this.createModal();
+        this.createModal(modalMap);
     }
 
     adjustPosition(instance: any) {
@@ -70,12 +70,31 @@ export class ModalService {
         el.style.opacity = 1;
     }
 
-    createModal() {
-        modalMap.forEach((modal: any, idx: number) => {
-            const $alias = modal.$alias;
-            this._vcMap[$alias] = this.componentFactoryResolver.resolveComponentFactory(modal);
-            this.constructModal(this._vcMap[$alias], $alias);
+    private createModalArray(modalArray) {
+        modalArray.forEach((modal: any, idx: number) => {
+            this.setModalInService(modal);
         });
+    }
+
+    private setModalInService(modal: any, $alias?: string) {
+        if (!(modal.prototype instanceof BaseModal)) {
+            throw new Error('the args must be BaseModal[] or extend BaseModal');
+        }
+        $alias = $alias || modal.$alias;
+        if (!$alias) {
+            throw new Error('the modal component should has $alias attribute');
+        }
+        this._vcMap[$alias] = this.componentFactoryResolver.resolveComponentFactory(modal);
+        this.constructModal(this._vcMap[$alias], $alias);
+    }
+
+    createModal(args: any, $alias?: string) {
+        if (args instanceof Array) {
+            return this.createModalArray(args);
+        } else if (args.prototype instanceof BaseModal) {
+            return this.setModalInService(args, $alias);
+        }
+        throw new Error('the args must be BaseModal[] or extend BaseModal');
     }
 
     constructModal(modal: any, name: string) {
@@ -96,7 +115,6 @@ export class ModalService {
         const containerInstance = instance.container;
         containerInstance.modal.nativeElement.style.zIndex = this._nextZIndex++;
         instance.close = () => {
-            // setTimeout(() => {
             for (let i = 0; i < this._queue.length; i++) {
                 if (this._queue[i] === instance) {
                     this._nextZIndex--;
@@ -104,14 +122,12 @@ export class ModalService {
                     break;
                 }
             }
-            // this.checkMask();
             containerInstance.isShow = false;
             containerInstance.zIndex = this.checkMask();
             setTimeout(() => {
                 this.appRef.detachView(componentRef.hostView);
                 componentRef.destroy();
-            })
-            // });
+            });
         };
         opts.output = opts.output || {};
 
@@ -136,7 +152,6 @@ export class ModalService {
                 this.adjustPosition(instance);
             });
         }
-        // this.showMask();
 
         document.querySelector('body').appendChild(componentRoot);
     }
@@ -144,16 +159,11 @@ export class ModalService {
 
     showMask() {
         return this._nextZIndex - 1;
-        // this.eventBus.emit('mask-show-change', {
-        //     useway: 'modal',
-        //     isShow: true,
-        //     zIndex: this._nextZIndex - 1
-        // });
     }
 
     checkMask() {
         if (this._queue.length === 0) {
-            return this.hideMask();
+            return 9999;
         } else {
             return this.subMask();
         }
@@ -161,19 +171,5 @@ export class ModalService {
 
     subMask() {
         return this._nextZIndex - 2;
-        // this.eventBus.emit('mask-show-change', {
-        //     useway: 'modal',
-        //     isShow: true,
-        //     zIndex: this._nextZIndex - 2
-        // });
-    }
-
-    hideMask() {
-        return 9999;
-        // this.eventBus.emit('mask-show-change', {
-        //     useway: 'modal',
-        //     isShow: false,
-        //     zIndex: 9999
-        // });
     }
 }

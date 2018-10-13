@@ -3,6 +3,7 @@ import {ModalContainerComponent} from './modal-container/modal-container.compone
 
 export class BaseModal {
 
+    static $alias: string = '';
     @ViewChild(ModalContainerComponent) container: any;
     @Input() title: string;
 
