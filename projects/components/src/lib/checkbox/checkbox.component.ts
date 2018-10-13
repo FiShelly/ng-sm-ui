@@ -33,7 +33,6 @@ export class CheckboxComponent implements OnInit, OnChanges, ControlValueAccesso
     @Input() disabled: Boolean = false;
     @Input() label: String;
     @Input() model: any;
-    @Input() indeterminate: Boolean = false;
     @Input() checked: Boolean = false;
     @Input() name: String;
     @Output() modelChange: EventEmitter<any> = new EventEmitter<any>();
