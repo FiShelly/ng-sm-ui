@@ -1,27 +1,59 @@
-# NgSmUi
+# NG-SM-UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+A small and smale UI components based on [element-ui](https://https://github.com/ElemeFE) styles and Angular.
 
-## Development server
+## Version
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
 
-## Code scaffolding
+## Angular Support
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Now Supports Angular `^6.0.0`.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- A small and smale UI compoents for web application, and you can use it in most scences.
+- This is a simple component that can be used quickly.
+- Written in TypeScript and Angular, you can use ng-sm-ui to build more compoents.
 
-## Running unit tests
+## Environment Support
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Modern browsers and Internet Explorer 9+ (with [polyfills](https://angular.io/guide/browser-support))
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+**We recommend using `@angular/cli` to install**，it not only makes development easier，but also allow you to take advantage of the rich ecosystem of angular packages and tooling.
 
-## Further help
+```bash
+$ ng new PROJECT_NAME
+$ cd PROJECT_NAME
+$ ng add ng-sm-ui
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+> More information about `@angular/cli` [here](https://github.com/angular/angular-cli).
+
+You can also install `ng-sm-ui` with npm or yarn
+
+```bash
+$ npm install ng-sm-ui
+```
+
+## Link
+- [My Blog](https://wwww.fishelly.top)
+- [Angular DOC](https://angular.io/)
+- [Angular-cli](https://cli.angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [RxJS](https://github.com/ReactiveX/rxjs)
+- [element-ui](https://github.com/ElemeFE)
+
+## The last.
+If you have any question, you can submit issuse for me.
+
+## LICENSE
+[MIT](LICENSE)
+
+[npm-image]: https://img.shields.io/npm/v/ng-sm-ui.svg
+[npm-url]: https://npmjs.org/package/ng-sm-ui
+[downloads-image]: https://img.shields.io/npm/dm/ng-sm-ui.svg
+[downloads-url]: https://npmjs.org/package/ng-sm-ui

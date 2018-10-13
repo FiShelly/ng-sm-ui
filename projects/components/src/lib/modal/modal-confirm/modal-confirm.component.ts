@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {BaseModal} from '../base-modal';
+
 // @dynamic
 @Component({
     selector: 'ng-sm-modal-confirm',
     templateUrl: './modal-confirm.component.html',
-    styleUrls: ['./modal-confirm.component.scss']
+    styleUrls: ['../styles/styles.scss', './modal-confirm.component.scss']
 })
 export class ModalConfirmComponent extends BaseModal implements OnInit {
     static $alias: string = 'confirm';

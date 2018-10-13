@@ -3,11 +3,12 @@ import {BaseModal} from '../base-modal';
 import {util} from '../../shared-services/utils/';
 import {MaterialService} from '../../shared-services/model/';
 import {Material} from '../../shared-services/models';
+
 // @dynamic
 @Component({
     selector: 'ng-sm-modal-image-select',
     templateUrl: './modal-image-select.component.html',
-    styleUrls: ['./modal-image-select.component.scss']
+    styleUrls: ['../styles/styles.scss', './modal-image-select.component.scss']
 })
 export class ModalImageSelectComponent extends BaseModal implements OnInit {
     static $alias: string = 'imageSelect';

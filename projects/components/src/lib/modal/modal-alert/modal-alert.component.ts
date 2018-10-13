@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Optional, Output, ViewChild} from '@angular/core';
 import {BaseModal} from '../base-modal';
+import {ModalContainerComponent} from '../modal-container/modal-container.component';
 // @dynamic
 @Component({
     selector: 'ng-sm-modal-alert',
     templateUrl: './modal-alert.component.html',
-    styleUrls: ['./modal-alert.component.scss']
+    styleUrls: ['../styles/styles.scss','./modal-alert.component.scss']
 })
 export class ModalAlertComponent extends BaseModal implements OnInit {
     static $alias: string = 'alert';

@@ -13,6 +13,8 @@ import {FormsModule} from '@angular/forms';
 import {PaginationModule} from '../pagination';
 import {LoadingModule} from '../loading';
 import {CheckboxModule} from '../checkbox';
+import {MaskModule} from '../mask';
+import {ModalContainerComponent} from './modal-container/modal-container.component';
 
 @NgModule({
     imports: [
@@ -23,7 +25,8 @@ import {CheckboxModule} from '../checkbox';
         ButtonModule,
         PaginationModule,
         LoadingModule,
-        CheckboxModule
+        CheckboxModule,
+        MaskModule
     ],
     declarations: [
         ModalAlertComponent,
@@ -31,7 +34,8 @@ import {CheckboxModule} from '../checkbox';
         ModalFooterComponent,
         ModalHeaderComponent,
         ModalPromptComponent,
-        ModalImageSelectComponent
+        ModalImageSelectComponent,
+        ModalContainerComponent
     ],
     exports: [
         ModalAlertComponent,
@@ -39,7 +43,17 @@ import {CheckboxModule} from '../checkbox';
         ModalFooterComponent,
         ModalHeaderComponent,
         ModalPromptComponent,
-        ModalImageSelectComponent
+        ModalImageSelectComponent,
+        ModalContainerComponent
+    ],
+    entryComponents: [
+        ModalAlertComponent,
+        ModalConfirmComponent,
+        ModalFooterComponent,
+        ModalHeaderComponent,
+        ModalPromptComponent,
+        ModalImageSelectComponent,
+        ModalContainerComponent
     ]
 })
 

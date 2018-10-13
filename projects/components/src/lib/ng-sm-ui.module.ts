@@ -24,6 +24,7 @@ import {TabsModule} from './tabs';
 import {TagModule} from './tag';
 import {TextareaModule} from './textarea';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export * from './button';
 export * from './checkbox';
@@ -51,37 +52,36 @@ export * from './textarea';
 export * from './version';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule
-    // BrowserAnimationsModule,
-    // RouterModule
-  ],
-  exports: [
-    ButtonModule,
-    CheckboxModule,
-    CheckboxGroupModule,
-    DateTimePickerModule,
-    InputModule,
-    LabelModule,
-    LeftMenuModule,
-    LoadingModule,
-    MarkDownModule,
-    MaskModule,
-    ModalModule,
-    PaginationModule,
-    RadioModule,
-    RadioGroupModule,
-    SelectModule,
-    SelectOptionModule,
-    SharedModule,
-    SwitchModule,
-    TabViewModule,
-    TableShownListModule,
-    TabsModule,
-    TagModule,
-    TextareaModule
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        BrowserAnimationsModule
+    ],
+    exports: [
+        ButtonModule,
+        CheckboxModule,
+        CheckboxGroupModule,
+        DateTimePickerModule,
+        InputModule,
+        LabelModule,
+        LeftMenuModule,
+        LoadingModule,
+        MarkDownModule,
+        MaskModule,
+        ModalModule,
+        PaginationModule,
+        RadioModule,
+        RadioGroupModule,
+        SelectModule,
+        SelectOptionModule,
+        SharedModule,
+        SwitchModule,
+        TabViewModule,
+        TableShownListModule,
+        TabsModule,
+        TagModule,
+        TextareaModule
+    ]
 })
 export class NgSmUiModule {
 }

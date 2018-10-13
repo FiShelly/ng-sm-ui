@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ng-sm-modal-footer',
   templateUrl: './modal-footer.component.html',
-  styleUrls: ['./modal-footer.component.scss']
+  styleUrls: ['../styles/styles.scss','./modal-footer.component.scss']
 })
 export class ModalFooterComponent implements OnInit {
 

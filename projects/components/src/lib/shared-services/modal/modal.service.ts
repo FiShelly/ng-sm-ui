@@ -39,7 +39,7 @@ export class ModalService {
     }
 
     adjustPosition(instance: any) {
-        const el = instance.modal.nativeElement;
+        const el = instance.container.modal.nativeElement;
         const currentStyle = window.getComputedStyle(el);
         const w = Number.parseInt(currentStyle['width']);
         const h = Number.parseInt(currentStyle['height']) +
@@ -93,7 +93,8 @@ export class ModalService {
         const componentRoot: HTMLElement = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0];
         const instance = componentRef.instance;
         this._queue.push(instance);
-        instance.modal.nativeElement.style.zIndex = this._nextZIndex++;
+        const containerInstance = instance.container;
+        containerInstance.modal.nativeElement.style.zIndex = this._nextZIndex++;
         instance.close = () => {
             // setTimeout(() => {
             for (let i = 0; i < this._queue.length; i++) {
@@ -103,12 +104,15 @@ export class ModalService {
                     break;
                 }
             }
-            this.checkMask();
-            this.appRef.detachView(componentRef.hostView);
-            componentRef.destroy();
+            // this.checkMask();
+            containerInstance.isShow = false;
+            containerInstance.zIndex = this.checkMask();
+            setTimeout(() => {
+                this.appRef.detachView(componentRef.hostView);
+                componentRef.destroy();
+            })
             // });
         };
-
         opts.output = opts.output || {};
 
         outputs.forEach(row => {
@@ -126,45 +130,50 @@ export class ModalService {
         if ('modalCreated' in instance) {
             setTimeout(() => {
                 const defaultOpts = ('defaultOptions' in instance) ? instance.defaultOptions : {};
+                containerInstance.isShow = true;
+                containerInstance.zIndex = this.showMask();
                 instance.modalCreated(Object.assign(defaultOpts, opts.input));
                 this.adjustPosition(instance);
             });
         }
-        this.showMask();
+        // this.showMask();
 
         document.querySelector('body').appendChild(componentRoot);
     }
 
 
     showMask() {
-        this.eventBus.emit('mask-show-change', {
-            useway: 'modal',
-            isShow: true,
-            zIndex: this._nextZIndex - 1
-        });
+        return this._nextZIndex - 1;
+        // this.eventBus.emit('mask-show-change', {
+        //     useway: 'modal',
+        //     isShow: true,
+        //     zIndex: this._nextZIndex - 1
+        // });
     }
 
     checkMask() {
         if (this._queue.length === 0) {
-            this.hideMask();
+            return this.hideMask();
         } else {
-            this.subMask();
+            return this.subMask();
         }
     }
 
     subMask() {
-        this.eventBus.emit('mask-show-change', {
-            useway: 'modal',
-            isShow: true,
-            zIndex: this._nextZIndex - 2
-        });
+        return this._nextZIndex - 2;
+        // this.eventBus.emit('mask-show-change', {
+        //     useway: 'modal',
+        //     isShow: true,
+        //     zIndex: this._nextZIndex - 2
+        // });
     }
 
     hideMask() {
-        this.eventBus.emit('mask-show-change', {
-            useway: 'modal',
-            isShow: false,
-            zIndex: 9999
-        });
+        return 9999;
+        // this.eventBus.emit('mask-show-change', {
+        //     useway: 'modal',
+        //     isShow: false,
+        //     zIndex: 9999
+        // });
     }
 }

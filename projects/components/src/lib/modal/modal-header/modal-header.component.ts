@@ -3,7 +3,7 @@ import {Component, EventEmitter, Input, OnInit, AfterViewInit, Output, ViewChild
 @Component({
     selector: 'ng-sm-modal-header',
     templateUrl: './modal-header.component.html',
-    styleUrls: ['./modal-header.component.scss']
+    styleUrls: ['../styles/styles.scss','./modal-header.component.scss']
 })
 export class ModalHeaderComponent implements OnInit, AfterViewInit {
     @ViewChild('content') content: any;

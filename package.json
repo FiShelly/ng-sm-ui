@@ -8,8 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "components:prod": "ng build components --prod",
-    "components": "ng build components "
+    "components:prod": "ng build components --prod && cp README.md ./dist/ng-sm-ui/README.md",
+    "components": "ng build components ",
+    "publish": "npm publish ./dist/ng-sm-ui"
   },
   "private": true,
   "dependencies": {

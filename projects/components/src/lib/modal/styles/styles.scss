@@ -1,0 +1,69 @@
+@import "../../../../assets/var";
+
+
+.el-dialog {
+    opacity: 0;
+    position: fixed;
+    background-color: $whiteBg;
+    min-width: 400px;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    transition: opacity .3s ease;
+    &__body {
+        padding: 30px 20px;
+        color: #606266;
+        font-size: 14px;
+
+        .text{
+            min-height: 40px;
+            height: auto;
+            width: 360px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+.el-dialog__footer{
+    padding: 10px 20px 20px 20px;
+    text-align: right;
+    box-sizing: border-box;
+
+    &::ng-deep{
+        button:first-child {
+            margin-right: 10px;
+        }
+        .el-button+.el-button {
+            margin-left: 10px;
+        }
+    }
+}
+
+.el-dialog__header{
+    padding: 20px 20px 10px 20px;
+    position: relative;
+    .el-dialog__title{
+        line-height: 24px;
+        font-size: 18px;
+        color: #303133;
+    }
+
+    .el-dialog__headerbtn{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 16px;
+        i{
+            color: #909399;
+            &:hover{
+                color: #409eff;
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@ import {BaseModal} from '../base-modal';
 @Component({
     selector: 'ng-sm-modal-prompt',
     templateUrl: './modal-prompt.component.html',
-    styleUrls: ['./modal-prompt.component.scss']
+    styleUrls: ['../styles/styles.scss', './modal-prompt.component.scss']
 })
 export class ModalPromptComponent extends BaseModal implements OnInit {
     static $alias: string = 'prompt';
