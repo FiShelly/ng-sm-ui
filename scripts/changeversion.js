@@ -7,7 +7,11 @@ console.log('>> read package.json success.');
 
 const buildPackageJson = JSON.parse(fs.readFileSync(buildPackageJsonPath));
 const orgPackageJson = JSON.parse(fs.readFileSync(orgPackageJsonPath));
-const args = process.argv.splice(3)[0] || '0.0.1';
+let args = process.argv.splice(3)[0];
+
+if (!args) {
+    args = Number(orgPackageJson.version) + '0.0.1';
+}
 
 buildPackageJson.version = orgPackageJson.version = args;
 

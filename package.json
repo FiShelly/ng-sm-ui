@@ -8,7 +8,8 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "components:prod": "ng build components --prod && cp README.md ./dist/ng-sm-ui/README.md && npm run cv",
+        "cp:file": "cp README.md ./dist/ng-sm-ui/README.md && cp LICENSE ./dist/ng-sm-ui/LICENSE",
+        "components:prod": "ng build components --prod && npm run cp:file && npm run cv",
         "components": "ng build components ",
         "publish": "npm publish ./dist/ng-sm-ui",
         "cv": "node ./scripts/changeversion -v"
