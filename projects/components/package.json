@@ -1,7 +1,7 @@
 {
     "name": "ng-sm-ui",
     "description": "A small and smale UI components based on element-ui styles and Angular.",
-    "version": "0.0.9",
+    "version": "0.01.0",
     "peerDependencies": {
         "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
         "@angular/core": "^6.0.0-rc.0 || ^6.0.0",

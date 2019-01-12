@@ -2,6 +2,8 @@
 
 A small and smale UI components based on [element-ui](https://https://github.com/ElemeFE) styles and Angular.
 
+- doc: ()[https://github.com/FiShelly/ng-sm-ui/blob/master/NG-SM-UI-DOC.md]
+
 ## Version
 
 [![NPM Version][npm-image]][npm-url]

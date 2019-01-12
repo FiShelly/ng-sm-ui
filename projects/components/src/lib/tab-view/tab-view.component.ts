@@ -64,6 +64,9 @@ export class TabViewComponent implements OnInit, OnDestroy, OnChanges {
         if (changes.hasOwnProperty('disabled')) {
             this.disabled = changes['disabled'].currentValue;
             this.computeData();
+        } else if (changes.hasOwnProperty('label')) {
+            this._label = changes['label'].currentValue;
+            this.computeData();
         }
     }
 
