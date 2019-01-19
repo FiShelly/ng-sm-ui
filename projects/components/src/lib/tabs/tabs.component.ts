@@ -1,6 +1,6 @@
 import {Component, EventEmitter, forwardRef, Input, OnChanges, OnDestroy, OnInit, AfterViewInit, Output, ViewChild} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {validator} from '../shared-services/utils';
+import {validator} from '../shared-services';
 // @dynamic
 export class TabItem {
     _id: string;
@@ -78,6 +78,11 @@ export class TabsComponent implements OnInit, OnDestroy, ControlValueAccessor, A
         this.tabItems = Object.values(this.tabMaps);
     }
 
+    deleteItemData(_id) {
+        delete this.tabMaps[_id];
+        this.tabItems = Object.values(this.tabMaps);
+    }
+
     ngOnChanges(changes): void {
         if (changes.hasOwnProperty('disabled')) {
             this.disabledChange.emit(changes['disabled']);
@@ -100,7 +105,9 @@ export class TabsComponent implements OnInit, OnDestroy, ControlValueAccessor, A
     }
 
     writeValue(value: any): void {
-        this.model = value;
+        console.log(value);
+        this.handleChange(value);
+        // this.model = value;
     }
 
     registerOnChange(fn: Function): void {
