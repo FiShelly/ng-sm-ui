@@ -11,7 +11,7 @@ import {
     ViewChild
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {RadioGroupComponent} from '../radio-group';
+import {RadioGroupComponent} from '../radio-group/radio-group.component';
 import {validator} from '../shared-services/utils';
 // @dynamic
 @Component({

@@ -1,2 +1,1 @@
-export * from './select-option.component';
-export * from './select-option.module';
+export * from './public_api';

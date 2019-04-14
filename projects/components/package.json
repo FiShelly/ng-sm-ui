@@ -1,14 +1,15 @@
 {
     "name": "ng-sm-ui",
     "description": "A small and smale UI components based on element-ui styles and Angular.",
-    "version": "0.01.0",
+    "version": "0.23.0",
     "peerDependencies": {
-        "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-        "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-        "@angular/animations": "^6.1.0",
-        "@angular/forms": "^6.1.0",
-        "@angular/http": "^6.1.0",
-        "@angular/router": "^6.1.0",
+        "@angular/animations": "~7.1.0",
+        "@angular/common": "~7.1.0",
+        "@angular/compiler": "~7.1.0",
+        "@angular/core": "~7.1.0",
+        "@angular/forms": "~7.1.0",
+        "@angular/http": "^7.1.4",
+        "@angular/router": "~7.1.0",
         "rxjs": "^6.0.0",
         "jquery": "^3.3.1",
         "moment": "^2.22.2"

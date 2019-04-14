@@ -1,1 +1,2 @@
-export * from './public_api';
+export * from './mask.component';
+export * from './mask.module';

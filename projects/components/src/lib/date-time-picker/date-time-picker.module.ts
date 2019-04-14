@@ -2,9 +2,9 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {DateTimePickerComponent} from './date-time-picker.component';
 import {FormsModule} from '@angular/forms';
-import {InputModule} from '../input';
-import {LabelModule} from '../label';
-import {ButtonModule} from '../button';
+import {InputModule} from '../input/input.module';
+import {LabelModule} from '../label/label.module';
+import {ButtonModule} from '../button/button.module';
 
 @NgModule({
     imports: [

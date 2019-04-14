@@ -1,30 +1,28 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ButtonModule} from './button';
-import {CheckboxModule} from './checkbox';
-import {CheckboxGroupModule} from './checkbox-group';
-import {DateTimePickerModule} from './date-time-picker';
-import {InputModule} from './input';
-import {LabelModule} from './label';
-import {LeftMenuModule} from './left-menu';
-import {LoadingModule} from './loading';
-import {MarkDownModule} from './mark-down';
-import {MaskModule} from './mask';
-import {ModalModule} from './modal';
-import {PaginationModule} from './pagination';
-import {RadioModule} from './radio';
-import {RadioGroupModule} from './radio-group';
-import {SelectModule} from './select';
-import {SelectOptionModule} from './select-option';
-import {SharedModule} from './shared-services';
-import {SwitchModule} from './switch';
-import {TabViewModule} from './tab-view';
-import {TableShownListModule} from './table-shown-list';
-import {TabsModule} from './tabs';
-import {TagModule} from './tag';
-import {TextareaModule} from './textarea';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import {CommonModule} from '@angular/common';
+import {ButtonModule} from './button/button.module';
+import {CheckboxModule} from './checkbox/checkbox.module';
+import {CheckboxGroupModule} from './checkbox-group/checkbox-group.module';
+import {DateTimePickerModule} from './date-time-picker/date-time-picker.module';
+import {InputModule} from './input/input.module';
+import {LabelModule} from './label/label.module';
+import {LeftMenuModule} from './left-menu/left-menu.module';
+import {LoadingModule} from './loading/loading.module';
+import {MarkDownModule} from './mark-down/mark-down.module';
+import {MaskModule} from './mask/mask.module';
+import {ModalModule} from './modal/modal.module';
+import {PaginationModule} from './pagination/pagination.module';
+import {RadioModule} from './radio/radio.module';
+import {RadioGroupModule} from './radio-group/radio-group.module';
+import {SelectModule} from './select/select.module';
+import {SelectOptionModule} from './select-option/select-option.module';
+// import {SharedModule} from './shared-services/shared.module';
+import {SwitchModule} from './switch/switch.module';
+import {TabViewModule} from './tab-view/tab-view.module';
+import {TableShownListModule} from './table-shown-list/table-shown-list.module';
+import {TabsModule} from './tabs/tabs.module';
+import {TagModule} from './tag/tag.module';
+import {TextareaModule} from './textarea/textarea.module';
 
 export * from './button';
 export * from './checkbox';
@@ -52,11 +50,6 @@ export * from './textarea';
 export * from './version';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        BrowserAnimationsModule
-    ],
     exports: [
         ButtonModule,
         CheckboxModule,
@@ -74,7 +67,7 @@ export * from './version';
         RadioGroupModule,
         SelectModule,
         SelectOptionModule,
-        SharedModule,
+        // SharedModule,
         SwitchModule,
         TabViewModule,
         TableShownListModule,

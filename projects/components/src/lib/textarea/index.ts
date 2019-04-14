@@ -1,2 +1,1 @@
-export * from './textarea.module';
-export * from './textarea.component';
+export * from './public_api';

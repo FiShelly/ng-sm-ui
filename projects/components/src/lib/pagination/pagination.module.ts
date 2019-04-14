@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PaginationComponent} from './pagination.component';
-import {InputModule} from '../input';
-import {LabelModule} from '../label';
-import {ButtonModule} from '../button';
+import {InputModule} from '../input/input.module';
+import {LabelModule} from '../label/label.module';
+import {ButtonModule} from '../button/button.module';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({

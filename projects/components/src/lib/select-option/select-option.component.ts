@@ -1,5 +1,5 @@
 import {Component, AfterViewInit, EventEmitter, Input, OnInit, Optional, Output, ViewChild} from '@angular/core';
-import {SelectComponent} from '../select/';
+import {SelectComponent} from '../select/select.component';
 import {validator} from '../shared-services/utils/';
 // @dynamic
 @Component({

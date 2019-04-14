@@ -1,1 +1,1 @@
-export * from './material.service';
+export * from './common.service';

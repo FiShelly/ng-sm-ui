@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {EventBusService} from './eventBus';
 import {ModalService} from './modal/';
 import {StorageService} from './utils';
-import {MaterialService} from './model';
 
 
 @NgModule({
@@ -13,7 +12,6 @@ import {MaterialService} from './model';
     providers: [
         ModalService,
         EventBusService,
-        MaterialService,
         StorageService,
     ],
 })

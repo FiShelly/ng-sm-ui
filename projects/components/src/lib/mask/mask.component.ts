@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, AfterViewInit} from '@angular/core';
-import {EventBusService} from '../shared-services/eventBus';
+import {EventBusService} from '../shared-services/eventBus/event-bus.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 // @dynamic
 @Component({

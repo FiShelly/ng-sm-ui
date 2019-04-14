@@ -6,14 +6,13 @@ import {
     Injectable,
     Injector
 } from '@angular/core';
-import {ModalAlertComponent, ModalConfirmComponent, ModalPromptComponent, ModalImageSelectComponent, BaseModal} from '../../modal';
+import {ModalAlertComponent, ModalConfirmComponent, ModalPromptComponent, BaseModal} from '../../modal';
 import {EventBusService} from '../eventBus';
 
 const modalMap = [
     ModalAlertComponent,
     ModalConfirmComponent,
-    ModalPromptComponent,
-    ModalImageSelectComponent
+    ModalPromptComponent
 ];
 
 @Injectable({

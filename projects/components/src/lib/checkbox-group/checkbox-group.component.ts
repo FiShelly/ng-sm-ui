@@ -5,13 +5,9 @@ import {
     Output,
     EventEmitter,
     forwardRef,
-    OnChanges,
-    ViewChildren,
-    QueryList,
-    ContentChildren
+    OnChanges
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {CheckboxComponent} from '../checkbox/checkbox.component';
 
 // @dynamic
 @Component({
@@ -31,10 +27,6 @@ export class CheckboxGroupComponent implements OnInit, ControlValueAccessor, OnC
     @Output() modelChange: EventEmitter<any> = new EventEmitter<any>();
 
     disabledChange: EventEmitter<any> = new EventEmitter<any>();
-    // @ViewChildren(CheckboxComponent) checkboxChildren: QueryList<CheckboxComponent>;
-    // @ContentChildren(CheckboxComponent) checkboxChildren: QueryList<CheckboxComponent>;
-    // @ViewChildren(forwardRef(() => CheckboxComponent))
-    // private checkboxChildren: CheckboxComponent;
 
     constructor() {
     }

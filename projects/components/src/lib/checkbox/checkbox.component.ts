@@ -2,18 +2,16 @@ import {
     Component,
     EventEmitter,
     forwardRef,
-    Host,
-    Inject,
     AfterViewInit,
     OnChanges,
     Input,
     OnInit,
     Output,
     ViewChild,
-    Optional, HostListener
+    Optional
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {CheckboxGroupComponent} from '../checkbox-group/';
+import {CheckboxGroupComponent} from '../checkbox-group/checkbox-group.component';
 import {validator} from '../shared-services/utils/';
 
 // @dynamic
