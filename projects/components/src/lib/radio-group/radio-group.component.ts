@@ -18,6 +18,7 @@ export class RadioGroupComponent implements OnInit, ControlValueAccessor, OnChan
 
     @Output() modelChange: EventEmitter<any> = new EventEmitter<any>();
     disabledChange: EventEmitter<any> = new EventEmitter<any>();
+    inputChange: EventEmitter<any> = new EventEmitter<any>();
     subscriber: Function[] = [];
 
     constructor() {
@@ -35,6 +36,9 @@ export class RadioGroupComponent implements OnInit, ControlValueAccessor, OnChan
 
     writeValue(value: any): void {
         this.model = value;
+        if (value){
+            this.inputChange.emit(value);
+        }
     }
 
     ngOnChanges(changes): void {

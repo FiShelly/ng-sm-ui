@@ -27,7 +27,7 @@ export class CheckboxGroupComponent implements OnInit, ControlValueAccessor, OnC
     @Output() modelChange: EventEmitter<any> = new EventEmitter<any>();
 
     disabledChange: EventEmitter<any> = new EventEmitter<any>();
-
+    inputChange: EventEmitter<any> = new EventEmitter<any>();
     constructor() {
     }
 
@@ -53,6 +53,9 @@ export class CheckboxGroupComponent implements OnInit, ControlValueAccessor, OnC
 
     writeValue(value: any): void {
         this.model = value;
+        if (value) {
+            this.inputChange.emit(value);
+        }
     }
 
     registerOnChange(fn: Function): void {

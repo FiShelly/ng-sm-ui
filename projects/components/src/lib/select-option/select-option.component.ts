@@ -33,7 +33,15 @@ export class SelectOptionComponent implements OnInit, AfterViewInit {
             this.group.disabledChange.subscribe(($e) => {
                 this.disabled = $e.currentValue;
             });
+            this.group.inputChange.subscribe(($e) => {
+                this.isSelected();
+            });
         }
+    }
+
+    isSelected () {
+        this.selected = this.label === this.group.model;
+        this.selected && this.group.updateText(this.contentText);
     }
 
 
@@ -49,8 +57,7 @@ export class SelectOptionComponent implements OnInit, AfterViewInit {
                 if (this.group.disabled) {
                     this.disabled = this.group.disabled;
                 }
-                this.selected = this.label === this.group.model;
-                this.selected && this.group.updateText(this.contentText);
+                this.isSelected();
             };
             update();
             this.group.subscriber.push(update);

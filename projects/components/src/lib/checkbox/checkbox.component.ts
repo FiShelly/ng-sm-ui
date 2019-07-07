@@ -57,6 +57,9 @@ export class CheckboxComponent implements OnInit, OnChanges, ControlValueAccesso
             this.group.disabledChange.subscribe(($e) => {
                 this.disabled = $e.currentValue;
             });
+            this.group.inputChange.subscribe(($e) => {
+                this.checked = this.isChecked();
+            })
         }
     }
 

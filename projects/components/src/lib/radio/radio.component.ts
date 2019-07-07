@@ -47,6 +47,9 @@ export class RadioComponent implements OnInit, OnChanges, ControlValueAccessor, 
             this.group.disabledChange.subscribe(($e) => {
                 this.disabled = $e.currentValue;
             });
+            this.group.inputChange.subscribe(($e) => {
+                this.model = this.group.model;
+            });
         }
     }
 
